@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930182042) do
+ActiveRecord::Schema.define(version: 20171030190641) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20170930182042) do
     t.text     "description"
     t.date     "due_date"
     t.boolean  "complete?"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "list_type",   default: "private"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"

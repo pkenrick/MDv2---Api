@@ -64,7 +64,7 @@ Rails.application.routes.draw do
     # as :user do
       post '/login' => 'sessions#create'
       delete '/logout' => 'sessions#destroy'
-      get 'user_tasks', to: 'task#user_tasks'
+      post 'user_tasks', to: 'task#user_tasks'
     # end
   end
 

@@ -20,8 +20,8 @@ class Api::BaseController < ApplicationController
   private
 
   def authenticate_token
-    puts request.headers.each{ |header| puts header }
     authenticate_with_http_token do |token, options|
+      puts "=====" # not printing this????/
       User.find_by(auth_token: token)
     end
   end
